@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,20 +14,31 @@ namespace Generatorlink_memozg
 {
     public partial class Form1 : Form
     {
-
+        public string[] LinkMassive = new string[]
+       {
+            
+       };
         public Form1()
         {
             InitializeComponent();
-
+           LinkMassive = linkParser(File.ReadAllText("links.txt"));
         }
-        public string[] LinkMassive = new string[]
-        {
-            "https://gamejolt.com/games/Unauticna/682523",
-            "https://unauticna.itch.io/unauticna"
-        };
+       
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
 
+        }
+        public string[] linkParser(string file)
+        {
+            string namescoppy = file;
+            string namelink = "";
+           List<string> namelinks = new List<string>();
+            for (int i =0;i< namescoppy.Length;i++)
+            {
+                if (namescoppy[i] != '\n') { namelink += namescoppy[i] + ""; }
+                else { namelinks.Add(namelink); namelink = ""; }
+            }
+            return namelinks.ToArray();
         }
 
 

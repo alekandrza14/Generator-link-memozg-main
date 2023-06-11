@@ -83,7 +83,7 @@ namespace Generatorlink_memozg
             this.Controls.Add(this.webControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Generatorlink@memozg";
+            this.Text = "ViewMiner";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.ResumeLayout(false);
